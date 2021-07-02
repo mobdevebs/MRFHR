@@ -1,0 +1,198 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Service\\Application.Service.csproj": {}
+  },
+  "projects": {
+    "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.DataAccess\\Application.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.DataAccess\\Application.DataAccess.csproj",
+        "projectName": "Application.DataAccess",
+        "projectPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.DataAccess\\Application.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\011219\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\011219\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj": {
+                "projectPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.90, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj",
+        "projectName": "Application.Entity",
+        "projectPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj",
+        "packagesPath": "C:\\Users\\011219\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\011219\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Service\\Application.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Service\\Application.Service.csproj",
+        "projectName": "Application.Service",
+        "projectPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Service\\Application.Service.csproj",
+        "packagesPath": "C:\\Users\\011219\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\011219\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.DataAccess\\Application.DataAccess.csproj": {
+                "projectPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.DataAccess\\Application.DataAccess.csproj"
+              },
+              "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj": {
+                "projectPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

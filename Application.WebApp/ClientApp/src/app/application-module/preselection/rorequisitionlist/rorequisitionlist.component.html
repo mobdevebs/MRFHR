@@ -1,0 +1,160 @@
+<div class="content-box m-b-15 m-t-10">
+    <div class="page-title-area pb-2 mb-2">
+        <h1 class="f-l">All Positions</h1>
+    </div>
+    <form [formGroup]="searchform" (ngSubmit)="fromSubmit()">
+        <div class="filter-sec">
+            <div class="form-row m-t-10">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Req No</label>
+                        <input type="text" class="form-control" formControlName="requisitionNo" 
+                        #requisitionNo autocomplete="off">
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Vertical</label>
+                        <select class="selectpicker" title='All' formControlName="verticalId" 
+                        #verticalId (change)="changeVertical()">
+                            <option *ngFor="let rec of verticals" [ngValue]="rec.verticalId">
+                                {{rec.verticalName}}
+                              </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Location</label>
+                        <select class="selectpicker" title='All' formControlName="locationId" #locationId>
+                            <option *ngFor="let rec of locations" [ngValue]="rec.locationId">
+                                {{rec.locationNo}}
+                              </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Request Date</label>
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="input-group datepiker date">
+                                    <input type="text" class="form-control pull-right datepicker" id="fromdatepicker"
+                                        placeholder="From Date" #fromDate formControlName="fromDate" autocomplete="off">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="basic-addon2"><i
+                                                class="fa fa-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-group datepiker date">
+                                    <input type="text" class="form-control pull-right datepicker" id="todatepicker"
+                                        placeholder="To Date" #toDate formControlName="toDate" autocomplete="off">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="basic-addon2"><i
+                                                class="fa fa-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-1">
+                    <div class="form-group">
+                        <label>IOM No.</label>
+                        <input type="text" class="form-control" formControlName="iOMNo" #iOMNo autocomplete="off">
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select class="selectpicker" title='Select' formControlName="requisitionApprovalStatus" #requisitionApprovalStatus>
+                            <option *ngFor="let rec of statuses" [ngValue]="rec.statusId">
+                                {{rec.statusName}}
+                              </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-12 text-right">
+
+                    <button type="submit" class="btn btn-primary btn-sm"><i class="las la-filter"></i>
+                        Filter</button>
+                    <button type="button" class="btn btn-secondary btn-sm"><i class="las la-sync-alt"></i>
+                        Reset</button>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+
+    <div class="table-responsive">
+
+        <table id="dataTable1" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Req No</th>
+                    <th>Requested By</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Function</th>
+                    <th>Department</th>
+                    <th>IOM</th>
+                    <th>Position</th>
+                    <th>Grade</th>
+                    <th>Approved</th>
+                    <th>Requested</th>
+                    <th>Hold</th>
+                    <th>Type</th>
+                    <th>Target</th>
+                    <th>JD</th>
+                    <th style="text-align: center;">Approval</th>
+                    <th style="text-align: center;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of requisitionLists">
+                    <td><a href="#" class="red">{{data.requisitionNo}}</a></td>
+                    <td>{{data.createdByUserName}}</td>
+                    <td>{{data.locationNo}}</td>
+                    <td>{{data.createdOn}}</td>
+                    <td>{{data.functionName}}</td>
+                    <td>{{data.departName}}</td>
+                    <td>{{data.iOMNo}}</td>
+                    <td>{{data.positionName}}</td>
+                    <td>{{data.gradeName}}</td>
+                    <td>{{data.approveCount}}</td>
+                    <td>{{data.requestCount}}</td>
+                    <td>{{data.holdCount}}</td>
+                    <td>{{data.jobTypeName}}</td>
+                    <td>{{data.targetDate}}</td>
+                    <td>{{data.jobDescriptionName}}</td>
+                    <td class="text-center"><img src="{{data.processStatusIcon}}" alt="Send For Approval" /></td>
+                    <td class="text-center">
+                        <div class="row-dropdown">
+                            <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false"><i class="las la-ellipsis-v"></i></button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="javascript:void(0)" (click)="gotoAllocateToRM(data.requisitionDetailHistoryId)" ><i
+                                        class="las la-check-square"></i> Take
+                                    Action</a>
+                                <a class="dropdown-item" href="#"><i class="las la-file-pdf"></i>
+                                    View IOM</a>
+                                <a class="dropdown-item" href="#"><i class="las la-file-pdf"></i>
+                                    View JD</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+</div>

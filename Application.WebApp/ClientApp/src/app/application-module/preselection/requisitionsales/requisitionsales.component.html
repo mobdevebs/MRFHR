@@ -1,0 +1,209 @@
+<div class="content-box m-b-15 m-t-10">
+    <div class="page-title-area pb-2 mb-2">
+        <h1 class="f-l">New Request - Plant</h1>
+    </div>
+    <!-- <form > -->
+    <div class="form-row m-t-10">
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label>Plant <span class="required">*</span></label>
+                <select class="selectpicker" title="Select" [(ngModel)]="selectedLocation"
+                    (change)="onLocationChange()">
+                    <option *ngFor="let location of locations" [ngValue]="location">
+                        {{location.locationNo}}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label>Code</label>
+                <input type="text" class="form-control" disabled [value]="selectedLocationCode">
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" class="form-control" disabled [value]="selectedLocationOffice">
+            </div>
+        </div>
+
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label>IOM No. <span class="required">*</span></label>
+                <input type="text" class="form-control" [(ngModel)]="iom">
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <a href="javascript:void(0)" class="add_btn" (click)="startRequisition()"><span>+</span>Add</a>
+        </div>
+    </div>
+    <div *ngIf="showTable">
+        <div class="row m-t-10">
+            <div class="col-sm-12">
+                <div class="table-responsive">
+                    
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th style="max-width: 50px;">Function  <span class="required">*</span></th>
+                                    <th style="max-width: 50px;">Department  <span class="required">*</span></th>
+                                    <th style="min-width: 70px;">IOM No.  <span class="required">*</span></th>
+                                    <th>Position  <span class="required">*</span></th>
+                                    <th style="max-width: 50px;">Grade  <span class="required">*</span></th>
+                                    <th style="min-width: 60px;">Appr.  <span class="required">*</span></th>
+                                    <th style="min-width: 50px;">Req.  <span class="required">*</span></th>
+                                    <th style="min-width: 60px; ">Hold  <span class="required">*</span></th>
+                                    <th>Type  <span class="required">*</span></th>
+                                    <th style="min-width: 120px;">Target  <span class="required">*</span></th>
+                                    <th>JD  <span class="required">*</span></th>
+                                    <th style="text-align: center;">Status</th>
+                                    <th style="text-align: center;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="form-group m-0" style="width: 160px !important;">
+                                            <select class="selectpicker no-remove" data-container="body" title="Select" [(ngModel)]="selectedFunction"
+                                                (change)="onFunctionChange()">
+                                                <option *ngFor="let function of functions" [ngValue]="function">
+                                                    {{function.functionName}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group m-0" style="width: 160px !important;">
+                                            <select class="selectpicker" data-container="body" title="Select"
+                                                [(ngModel)]="selectedDepartment">
+                                                <option *ngFor="let department of departments" [ngValue]="department">
+                                                    {{department.departmentName}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group m-0">
+                                            <input type="text" class="form-control" [(ngModel)]="iomNo">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group m-0" style="width: 160px !important;">
+                                            <select class="selectpicker no-remove" data-container="body" title="Select" [(ngModel)]="selectedPosition"
+                                                (change)="onPositionChange()">
+                                                <option *ngFor="let position of positions" [ngValue]="position">
+                                                    {{position.positionName}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group m-0" style="width: 120px !important;">
+                                            <select class="selectpicker" data-container="body" title="Select" [(ngModel)]="selectedGrade">
+                                                <option *ngFor="let grade of grades" [ngValue]="grade">
+                                                    {{grade.gradeName}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group m-0">
+                                            <input type="text" class="form-control" [(ngModel)]="approveCount">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group m-0">
+                                            <input type="text" class="form-control" [(ngModel)]="requestCount">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group m-0">
+                                            <input type="text" class="form-control" 
+                                            value="{{(approveCount-requestCount)>=0? (approveCount-requestCount) : ''}}"
+                                            disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group m-0" style="width: 110px !important;">
+                                            <select class="selectpicker no-remove" data-container="body" title="Select" [(ngModel)]="selectedJobType">
+                                                <option *ngFor="let jobtype of jobtypes" [ngValue]="jobtype">
+                                                    {{jobtype.jobTypeName}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group m-0">
+
+                                            <div class="input-group datepiker date">
+                                                <input type="text" class="form-control pull-right datepicker"
+                                                    id="datepicker" placeholder="To Date" #tDate [(ngModel)]="targetDate">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="basic-addon2"><i
+                                                            class="fa fa-calendar"></i></span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group m-0" style="width: 190px !important;">
+                                            <select class="selectpicker no-remove" data-container="body" title="Select"
+                                                [(ngModel)]="selectedJobDescription">
+                                                <option *ngFor="let jobdescription of jobdescriptions"
+                                                    [ngValue]="jobdescription">
+                                                    {{jobdescription.jobDescriptionName}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>&nbsp; </td>
+                                    <td class="text-center"><a href="javascript:void(0)" class="row-btn" (click)="addRow()">+</a> </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr *ngFor="let data of requistionDetailDataArray">
+                                    <td>{{data.functionName}}</td>
+                                    <td>{{data.departmentName}}</td>
+                                    <td>{{data.iomNo}}</td>
+                                    <td>{{data.positionName}}</td>
+                                    <td>{{data.gradeName}}</td>
+                                    <td>{{data.approveCount}}</td>
+                                    <td>{{data.requestCount}}</td>
+                                    <td>{{data.holdCount}}</td>
+                                    <td>{{data.jobTypeName}}</td>
+                                    <td>{{data.targetDate}}</td>
+                                    <td>{{data.jobDescriptionName}}</td>
+                                    <td class="text-center" *ngIf="data.holdCount>0"><img
+                                            src="../../../../assets/images/icon_sendforApproval.png"
+                                            alt="Send For Approval" /></td>
+                                    <td class="text-center" *ngIf="data.holdCount==0"><img
+                                        src="../../../../assets/images/icon_autoApproved.png"
+                                        alt="Send For Approval" /></td>
+                                    <td class="text-center"><a href="javascript:void(0)" class="row-btn"><i
+                                                class="las la-trash-alt"></i></a> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <label for="">Management Approval <span class="required">*</span></label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile" (change)="onFileChange($event.target.files)">
+                    <label class="custom-file-label" for="customFile" #managementFileImport >Choose file</label>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-primary" (click)="formSubmit()"><i class="las la-save"></i> Submit</button>
+                <button type="button" class="btn btn-secondary"><i class="las la-undo-alt"></i> Reset</button>
+            </div>
+        </div>
+    </div>
+    <!-- </form> -->
+</div>

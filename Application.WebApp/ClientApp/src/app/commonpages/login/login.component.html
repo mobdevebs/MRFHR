@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col col-md-6">
+            <div class="log-card mt-5 p-md-5 p-sm-4 p-4">
+                <h5>Sign In</h5>
+                <form class="needs-validation" novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <label for="validationCustomUsername">Email ID <span class="required">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend"><i class="las la-envelope"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="validationCustomUsername" placeholder="User ID" formControlName="userId" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Please enter Email ID.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="validationCustomPassword">Password <span class="required">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend"><i class="las la-lock"></i></span>
+                            </div>
+                            <input type="password" class="form-control"  formControlName="password" id="validationCustomPassword" placeholder="Password" aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Please enter Password.
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="red">Forgot Password?</a>
+                    <button class="btn btn-primary my-3 w-100" type="submit">Submit</button>
+                    <p>Don't have an account yet? <a href="#" class="red">Create Account.</a></p>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>

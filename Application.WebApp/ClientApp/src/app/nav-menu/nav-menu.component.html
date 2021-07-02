@@ -1,0 +1,126 @@
+<div class="topbar">
+  <button class="button-menu-mobile open-left waves-effect waves-primary">
+    <i class="fa fa-bars"></i>
+  </button>
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav navbar-left">
+        <li>
+          <a class="logo-area" href="javascript:void(0);"><img src="assets/images/logo.png" width="74" height="56"
+              alt="" /></a>
+        </li>
+      </ul>
+      <div class="dropdown user show">
+        <a href="#" data-toggle="dropdown" id="dropdownMenuLink" aria-expanded="false" aria-haspopup="true"
+          role="button">
+          <div class="name">Employee Name</div>
+          <div id="propic" class="user-img"><img alt="" src="assets/images/user-icon.png"></div>
+        </a>
+        <!-- <ul class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+              <li><a id="previousSiteUrl" href="#"><i class="fa fa-cog" aria-hidden="true"></i>Home</a></li>
+              <li><a id="signout" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>log out</a></li>
+          </ul> -->
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#"><i class="las la-home"></i> Home</a>
+          <a class="dropdown-item" href="javascript:void(0)" (click)="onlogout()"><i class="las la-sign-out-alt" ></i> Log Out</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- ========== Left Sidebar Start ========== -->
+<div class="left side-menu">
+  <div class="sidebar-inner slimscrollleft">
+    <div id="sidebar-menu">
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="has_sub">
+          <a href="javascript:void(0);"><i class="las la-sitemap"></i><span>Admin</span><span class="menu-arrow"></span></a>
+          <ul>
+            <li><a href="javascript:void(0);"><span>User Management</span></a></li>
+            <li><a href="javascript:void(0);"><span>JD Management</span></a></li>
+            <li><a href="javascript:void(0);"><span>JD Library</span></a></li>
+            <li><a href="javascript:void(0);"><span>Employee Master</span></a></li>
+            <li><a href="javascript:void(0);"><span>Location Master</span></a></li>
+            <li><a href="javascript:void(0);"><span>Position Master</span></a></li>
+            <li><a href="javascript:void(0);"><span>Document Management</span></a></li>
+          </ul>
+        </li>
+        <li class="has_sub">
+          <a href="javascript:void(0);"><i class="las la-plus"></i><span>New Request</span><span
+              class="menu-arrow"></span></a>
+          <ul class="list-unstyled">
+            <li><a routerLink="/requisition/plant">Plant</a></li>
+            <li><a href="javascript:void(0);">Corporate</a></li>
+            <li><a href="javascript:void(0);">Sales & Marketing</a></li>
+            <li><a href="javascript:void(0);">Hold Release</a></li>
+          </ul>
+        </li>
+        <li class="has_sub">
+          <a href="javascript:void(0);"><i class="las la-exchange-alt"></i><span>Replacement
+              Request</span><span class="menu-arrow"></span></a>
+          <ul class="list-unstyled">
+            <li class="has_sub">
+              <a href="javascript:void(0);"><span>Resignation</span><span class="menu-arrow"></span></a>
+              <ul class="list-unstyled">
+                <li><a href="javascript:void(0);">Plant</a></li>
+                <li><a href="javascript:void(0);">Corporate</a></li>
+                <li><a href="javascript:void(0);">Sales & Marketing</a></li>
+                <li><a href="javascript:void(0);">Hold Release</a></li>
+              </ul>
+            </li>
+            <li class="has_sub">
+              <a href="javascript:void(0);"><span>Succession Plan</span><span class="menu-arrow"></span></a>
+              <ul class="list-unstyled">
+                <li><a href="javascript:void(0);">Plant</a></li>
+                <li><a href="javascript:void(0);">Corporate</a></li>
+                <li><a href="javascript:void(0);">Sales & Marketing</a></li>
+                <li><a href="javascript:void(0);">Hold Release</a></li>
+              </ul>
+            </li>
+            <li class="has_sub">
+              <a href="javascript:void(0);"><span>Transfer</span><span class="menu-arrow"></span></a>
+              <ul class="list-unstyled">
+                <li><a href="javascript:void(0);">Plant</a></li>
+                <li><a href="javascript:void(0);">Corporate</a></li>
+                <li><a href="javascript:void(0);">Sales & Marketing</a></li>
+                <li><a href="javascript:void(0);">Hold Release</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="javascript:void(0);"><i class="las la-edit"></i><span>My Action</span></a>
+        </li>
+        <li>
+          <a href="javascript:void(0);"><i class="las la-file-alt"></i><span>Reports</span></a>
+        </li>
+        <li>
+          <a href="javascript:void(0);"><i class="las la-tachometer-alt"></i><span>Dashboard</span></a>
+        </li>
+        <li>
+          <a href="javascript:void(0);"><i class="las la-search"></i><span>Profile Search</span></a>
+        </li>
+        <li>
+          <a href="javascript:void(0);"><i class="las la-user-tie"></i><span>Employee
+              Profile</span></a>
+        </li>
+        <li class="has_sub">
+          <a href="javascript:void(0);"><i class="las la-lightbulb"></i><span>Talent
+              Pipeline</span><span class="menu-arrow"></span></a>
+          <ul class="list-unstyled">
+            <li><a href="javascript:void(0);">Campus</a></li>
+            <li><a href="javascript:void(0);">Off Campus</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript:void(0);"><i class="las la-exclamation-triangle"></i><span>Critical
+              Request</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<!-- Left Sidebar End -->
