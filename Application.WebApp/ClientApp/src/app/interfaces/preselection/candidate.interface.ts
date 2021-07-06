@@ -1,3 +1,5 @@
+// import { Interface } from "readline";
+
 export interface ICandidate {
     candidateId: number;
     prefixId: number;
@@ -57,6 +59,13 @@ export interface ISearchCandidate {
     search:string;
 }
 
+export interface ICandidateCMDStatus {
+    candidateId:number;
+    cmdApprovalRequired:number;
+    cmdApprovalStatus:boolean;
+    cmdApprovalNo:string;
+    cmdApprovalDocument:string;
+}
 export interface ICandidateDetail {
     candidateId: number;
     prefix: string;
@@ -100,4 +109,13 @@ export interface ICandidateDetail {
     status: string;
     sourceChannelName: string;
     createdBy: string;
+}
+
+export interface ICandidateStatus
+{
+    requisitionId :number;
+    candidateId :number;
+    statusId :number;
+    createdBy :number;
+    remarks :string;
 }

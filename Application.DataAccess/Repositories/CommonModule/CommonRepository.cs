@@ -37,6 +37,66 @@ namespace Application.DataAccess.Repositories.CommonModule
             }
         }
 
+        public async Task<List<State>> GetAllState()
+        {
+            try
+            {
+                List<State> returnList = new List<State>();
+                using (IDbConnection connection = base.GetConnection())
+                {
+                    var para = new DynamicParameters();
+                    const string procName = "Usp_State_GetAll";
+                    connection.Open();
+                    returnList = connection.Query<State>(procName, para, commandType: CommandType.StoredProcedure).ToList();
+                    return await Task.FromResult(returnList);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<Years>> GetAllYears()
+        {
+            try
+            {
+                List<Years> returnList = new List<Years>();
+                using (IDbConnection connection = base.GetConnection())
+                {
+                    var para = new DynamicParameters();
+                    const string procName = "Usp_Years_GetAll";
+                    connection.Open();
+                    returnList = connection.Query<Years>(procName, para, commandType: CommandType.StoredProcedure).ToList();
+                    return await Task.FromResult(returnList);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<List<Months>> GetAllMonths()
+        {
+            try
+            {
+                List<Months> returnList = new List<Months>();
+                using (IDbConnection connection = base.GetConnection())
+                {
+                    var para = new DynamicParameters();
+                    const string procName = "Usp_Months_GetAll";
+                    connection.Open();
+                    returnList = connection.Query<Months>(procName, para, commandType: CommandType.StoredProcedure).ToList();
+                    return await Task.FromResult(returnList);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<List<Experience>> GetAllExperience()
         {
             try
@@ -56,5 +116,7 @@ namespace Application.DataAccess.Repositories.CommonModule
                 throw ex;
             }
         }
-    }
+    }  
 }
+
+

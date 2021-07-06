@@ -24,96 +24,96 @@ import { VendorcandidateComponent } from '../../application-module/vendor/vendor
 import { VendordashboardComponent } from '../../application-module/vendor/vendordashboard/vendordashboard.component';
 
 const routes: Routes = [
-    {
-      path: '',                       
-      component: MasterlayoutComponent,
-      canActivate: [AuthenticationGuard],       
-      children: [
-        {
-          path: 'home',
-          component: DashboardComponent  
-        },
-        {
-          path:'jobdescription',
-          component:JobdescriptionComponent
-        },
-        {
-          path:'requisition/plant',
-          component:RequisitionplantComponent
-        },
-        {
-          path:'approverrequisitionlist',
-          component:ApproverrequisitionlistComponent
-        },
-        {
-          path:'rorequisitionlist',
-          component:RorequisitionlistComponent
-        },
-        {
-          path:'rorequisitionlist/allocatetorm',
-          component:AllocatetormComponent
-        },
-        {
-          path:'rmrequisitionlist',
-          component:RmrequisitionlistComponent
-        },
-        {
-          path:'allocatesourcechannel',
-          component:AllocatesourcechannelComponent
-        },
-        { path: 'getcandidate/:id', component: GetcandidateComponent },
-        {
-          path:'addcandidate',
-          component:AddcandidateComponent
-        },
-        {
-          path:'getcandidate',
-          component:GetcandidateComponent
-        },
-        {
-          path:'viewcandidate',
-          component:ViewcandidateComponent
-        },
-        {
-          path:'viewallcandidate',
-          component:ViewallcandidateComponent
-        },
-        {
-          path:'cmdapproval',
-          component:CandidatecmdapprovalComponent
-        },       
-        {
-          path:'currentjob',
-          component:CurrentjobComponent
-        },
-        {
-          path:'signup',
-          component:UsermasterComponent
-        },       
-        {
-          path:'vendordashboard',
-          component:VendordashboardComponent
-        },
-        {
-          path:'vendorcandidate',
-          component:VendorcandidateComponent
-        }
-      ]
-    },
-    {
-      path: '',
-      component: LoginlayoutComponent, 
-      children: [
-        {
-          path: 'login',
-          component: LoginComponent   
-        }
-      ]
-    }
-  ];
-  //export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
-  @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-  })
-  export class AppRoutingModule {}
+  {
+    path: '',
+    component: MasterlayoutComponent,
+    canActivate: [AuthenticationGuard],
+    children: [
+      {
+        path: 'home',
+        component: DashboardComponent
+      },
+      {
+        path: 'jobdescription',
+        component: JobdescriptionComponent
+      },
+      {
+        path: 'requisition/plant',
+        component: RequisitionplantComponent
+      },
+      {
+        path: 'approverrequisitionlist',
+        component: ApproverrequisitionlistComponent
+      },
+      {
+        path: 'rorequisitionlist',
+        component: RorequisitionlistComponent
+      },
+      {
+        path: 'rorequisitionlist/allocatetorm',
+        component: AllocatetormComponent
+      },
+      {
+        path: 'rmrequisitionlist',
+        component: RmrequisitionlistComponent
+      },
+      {
+        path: 'allocatesourcechannel',
+        component: AllocatesourcechannelComponent
+      },
+      { path: 'getcandidate/:id', component: GetcandidateComponent },
+      {
+        path: 'addcandidate',
+        component: AddcandidateComponent
+      },
+      {
+        path: 'getcandidate',
+        component: GetcandidateComponent
+      },
+      {
+        path: 'viewcandidate',
+        component: ViewcandidateComponent
+      },
+      {
+        path: 'viewallcandidate',
+        component: ViewallcandidateComponent
+      },
+      {
+        path: 'cmdapproval',
+        component: CandidatecmdapprovalComponent
+      },
+      {
+        path: 'currentjob',
+        component: CurrentjobComponent
+      },
+      {
+        path: 'signup',
+        component: UsermasterComponent
+      },
+      {
+        path: 'vendordashboard',
+        component: VendordashboardComponent
+      },
+      {
+        path: 'vendorcandidate',
+        component: VendorcandidateComponent
+      }
+    ]
+  },
+  {
+    path: '',
+    component: LoginlayoutComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent
+      }
+    ]
+  }
+];
+//export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
