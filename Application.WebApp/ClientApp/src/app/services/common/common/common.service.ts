@@ -51,6 +51,27 @@ export class CommonService {
       )
   }
 
+  getAllState(): Observable<any> {
+    return this.httpClient.get<any>(this.apiURL + '/common/getallstate', this.httpOptions)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+  }
+
+  getAllYears(): Observable<any> {
+    return this.httpClient.get<any>(this.apiURL + '/common/getallyears',  this.httpOptions)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+  }
+
+  getAllMonths(): Observable<any> {
+    return this.httpClient.get<any>(this.apiURL + '/common/getallmonths',  this.httpOptions)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+  }
+
   errorHandler(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
