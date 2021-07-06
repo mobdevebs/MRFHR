@@ -887,11 +887,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Service\\Application.Service.csproj",
+      "projectUniqueName": "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.Service\\Application.Service.csproj",
       "projectName": "Application.Service",
-      "projectPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Service\\Application.Service.csproj",
+      "projectPath": "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.Service\\Application.Service.csproj",
       "packagesPath": "C:\\Users\\011219\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Service\\obj\\",
+      "outputPath": "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -910,11 +910,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.DataAccess\\Application.DataAccess.csproj": {
-              "projectPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.DataAccess\\Application.DataAccess.csproj"
+            "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.DataAccess\\Application.DataAccess.csproj": {
+              "projectPath": "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.DataAccess\\Application.DataAccess.csproj"
             },
-            "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj": {
-              "projectPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj"
+            "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.Entity\\Application.Entity.csproj": {
+              "projectPath": "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.Entity\\Application.Entity.csproj"
             }
           }
         }

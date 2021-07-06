@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.DataAccess\\Application.DataAccess.csproj": {}
+    "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.DataAccess\\Application.DataAccess.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.DataAccess\\Application.DataAccess.csproj": {
+    "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.DataAccess\\Application.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.DataAccess\\Application.DataAccess.csproj",
+        "projectUniqueName": "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.DataAccess\\Application.DataAccess.csproj",
         "projectName": "Application.DataAccess",
-        "projectPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.DataAccess\\Application.DataAccess.csproj",
+        "projectPath": "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.DataAccess\\Application.DataAccess.csproj",
         "packagesPath": "C:\\Users\\011219\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.DataAccess\\obj\\",
+        "outputPath": "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj": {
-                "projectPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj"
+              "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.Entity\\Application.Entity.csproj": {
+                "projectPath": "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.Entity\\Application.Entity.csproj"
               }
             }
           }
@@ -77,14 +77,14 @@
         }
       }
     },
-    "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj": {
+    "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.Entity\\Application.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj",
+        "projectUniqueName": "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.Entity\\Application.Entity.csproj",
         "projectName": "Application.Entity",
-        "projectPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj",
+        "projectPath": "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.Entity\\Application.Entity.csproj",
         "packagesPath": "C:\\Users\\011219\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\obj\\",
+        "outputPath": "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

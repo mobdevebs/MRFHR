@@ -12,3 +12,17 @@ E:\Projects\DotNet\MRF-HR-Portal\Application.WebApp\Application.Service\obj\Debu
 E:\Projects\DotNet\MRF-HR-Portal\Application.WebApp\Application.Service\obj\Debug\netcoreapp3.1\Application.Service.csproj.CopyComplete
 E:\Projects\DotNet\MRF-HR-Portal\Application.WebApp\Application.Service\obj\Debug\netcoreapp3.1\Application.Service.dll
 E:\Projects\DotNet\MRF-HR-Portal\Application.WebApp\Application.Service\obj\Debug\netcoreapp3.1\Application.Service.pdb
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Service\bin\Debug\netcoreapp3.1\Application.Service.deps.json
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Service\bin\Debug\netcoreapp3.1\Application.Service.dll
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Service\bin\Debug\netcoreapp3.1\Application.Service.pdb
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Service\bin\Debug\netcoreapp3.1\Application.DataAccess.dll
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Service\bin\Debug\netcoreapp3.1\Application.Entity.dll
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Service\bin\Debug\netcoreapp3.1\Application.DataAccess.pdb
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Service\bin\Debug\netcoreapp3.1\Application.Entity.pdb
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Service\obj\Debug\netcoreapp3.1\Application.Service.csprojAssemblyReference.cache
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Service\obj\Debug\netcoreapp3.1\Application.Service.csproj.CoreCompileInputs.cache
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Service\obj\Debug\netcoreapp3.1\Application.Service.AssemblyInfoInputs.cache
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Service\obj\Debug\netcoreapp3.1\Application.Service.AssemblyInfo.cs
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Service\obj\Debug\netcoreapp3.1\Application.Service.csproj.CopyComplete
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Service\obj\Debug\netcoreapp3.1\Application.Service.dll
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Service\obj\Debug\netcoreapp3.1\Application.Service.pdb

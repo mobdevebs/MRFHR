@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s/m4NXZYdxR1x7UmNlTEmHkTY6n9aQpDk/rrPBoBnsnfNYH02MK4i9x8VtfTduCJ/3Po6FUzqWr5xZsxbIJYVw==",
+  "dgSpecHash": "S8uiHo0YVhOsZPoM6YjnNHE/9ecc5TZmGJETGn3GLJIJwH7f0vRQ1MitE1qiveDIfuR2VLq1ryqVAegVpFKDNA==",
   "success": true,
-  "projectFilePath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Service\\Application.Service.csproj",
+  "projectFilePath": "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.Service\\Application.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\011219\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\011219\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",

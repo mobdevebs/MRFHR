@@ -7,3 +7,11 @@ E:\Projects\DotNet\MRF-HR-Portal\Application.WebApp\Application.Entity\obj\Debug
 E:\Projects\DotNet\MRF-HR-Portal\Application.WebApp\Application.Entity\obj\Debug\netcoreapp3.1\Application.Entity.dll
 E:\Projects\DotNet\MRF-HR-Portal\Application.WebApp\Application.Entity\obj\Debug\netcoreapp3.1\Application.Entity.pdb
 E:\Projects\DotNet\MRF-HR-Portal\Application.WebApp\Application.Entity\obj\Debug\netcoreapp3.1\Application.Entity.csprojAssemblyReference.cache
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Entity\bin\Debug\netcoreapp3.1\Application.Entity.deps.json
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Entity\bin\Debug\netcoreapp3.1\Application.Entity.dll
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Entity\bin\Debug\netcoreapp3.1\Application.Entity.pdb
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Entity\obj\Debug\netcoreapp3.1\Application.Entity.csproj.CoreCompileInputs.cache
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Entity\obj\Debug\netcoreapp3.1\Application.Entity.AssemblyInfoInputs.cache
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Entity\obj\Debug\netcoreapp3.1\Application.Entity.AssemblyInfo.cs
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Entity\obj\Debug\netcoreapp3.1\Application.Entity.dll
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.Entity\obj\Debug\netcoreapp3.1\Application.Entity.pdb

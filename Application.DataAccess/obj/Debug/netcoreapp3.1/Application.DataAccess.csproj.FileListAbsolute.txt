@@ -10,3 +10,15 @@ E:\Projects\DotNet\MRF-HR-Portal\Application.WebApp\Application.DataAccess\obj\D
 E:\Projects\DotNet\MRF-HR-Portal\Application.WebApp\Application.DataAccess\obj\Debug\netcoreapp3.1\Application.DataAccess.csproj.CopyComplete
 E:\Projects\DotNet\MRF-HR-Portal\Application.WebApp\Application.DataAccess\obj\Debug\netcoreapp3.1\Application.DataAccess.dll
 E:\Projects\DotNet\MRF-HR-Portal\Application.WebApp\Application.DataAccess\obj\Debug\netcoreapp3.1\Application.DataAccess.pdb
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.DataAccess\bin\Debug\netcoreapp3.1\Application.DataAccess.deps.json
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.DataAccess\bin\Debug\netcoreapp3.1\Application.DataAccess.dll
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.DataAccess\bin\Debug\netcoreapp3.1\Application.DataAccess.pdb
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.DataAccess\bin\Debug\netcoreapp3.1\Application.Entity.dll
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.DataAccess\bin\Debug\netcoreapp3.1\Application.Entity.pdb
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.DataAccess\obj\Debug\netcoreapp3.1\Application.DataAccess.csprojAssemblyReference.cache
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.DataAccess\obj\Debug\netcoreapp3.1\Application.DataAccess.csproj.CoreCompileInputs.cache
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.DataAccess\obj\Debug\netcoreapp3.1\Application.DataAccess.AssemblyInfoInputs.cache
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.DataAccess\obj\Debug\netcoreapp3.1\Application.DataAccess.AssemblyInfo.cs
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.DataAccess\obj\Debug\netcoreapp3.1\Application.DataAccess.csproj.CopyComplete
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.DataAccess\obj\Debug\netcoreapp3.1\Application.DataAccess.dll
+E:\Projects\DotNet\HR-Portal-MRF\MRFHR\Application.DataAccess\obj\Debug\netcoreapp3.1\Application.DataAccess.pdb

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RNdX0l5eY1k9lxwepmFX/yOcKeHeOjUwkQYNK0Gg2AdX/NsLBWXa0yk1qMfxnV2RXMyS7bd7ogPry6FHxOxjGg==",
+  "dgSpecHash": "RPc3bA+PBw+78zRtvwfFDbpc0vjiH6SyWJxxNTInImlo8uYPH1pYKq+VdrHG6t0JoZtN4Lff8igfMyd6tGOA3Q==",
   "success": true,
-  "projectFilePath": "E:\\Projects\\DotNet\\MRF-HR-Portal\\Application.WebApp\\Application.Entity\\Application.Entity.csproj",
+  "projectFilePath": "E:\\Projects\\DotNet\\HR-Portal-MRF\\MRFHR\\Application.Entity\\Application.Entity.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
