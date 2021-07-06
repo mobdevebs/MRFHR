@@ -10,5 +10,6 @@ namespace Application.Service.Services.Interfaces.CommonModule
  public   interface IQualificationService
     {
         Task<List<Qualification>> GetAllQualification(SearchQualification search);
+        Task<List<QualificationType>> GetAllQualificationType(SearchQualification search);
     }
 }

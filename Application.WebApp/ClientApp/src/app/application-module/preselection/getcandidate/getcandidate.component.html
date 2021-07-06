@@ -1,125 +1,130 @@
+<div class="content-box m-b-15 m-t-10" *ngFor="let profile of candidate">
+    <div class="page-title-area pb-2 mb-2">
+        <a href="#" class="back-btn"><i class="las la-arrow-circle-left"></i></a>
+        <h1 class="f-l">Candidate Details</h1>
+    </div>
+    <div class="candidate-info-header mb-4">
+        <div>
+            <h6 class="red d-inline-block mt-1">{{profile.fullName}}</h6>
+            <span> {{profile.emailId}}</span>
+        </div>
+        <div class="pb-1">
+            <span class="mr-3"><i class="las la-mobile"></i> {{profile.contactNo}}</span>
+            <span><i class="las la-male">{{profile.genderName}}</i></span>
+        </div>
+    </div>
 
-                    <div class="content-box m-b-15 m-t-10"  *ngFor="let profile of candidate">
-                        <div class="page-title-area pb-2 mb-2">
-                            <a href="#" class="back-btn"><i class="las la-arrow-circle-left"></i></a>
-                            <h1 class="f-l">Candidate Details</h1>
-                        </div>
-                        <div class="candidate-info-header mb-4">
-                            <div>
-                                <h6 class="red d-inline-block mt-1">{{profile.fullName}}</h6>
-                                <span> {{profile.emailId}}</span>
-                            </div>
-                            <div class="pb-1">
-                                <span class="mr-3"><i class="las la-mobile"></i> {{profile.contactNo}}</span>
-                                <span><i class="las la-male">{{profile.genderName}}</i></span>
-                            </div>
-                        </div>
+    <div class="form-row">
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Age :</p>
+            <p class="d-inline-block">{{profile.age}} </p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Aadhar No. :</p>
+            <p class="d-inline-block"> {{profile.aadharNo}}</p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Mother Tongue :</p>
+            <p class="d-inline-block"> {{profile.motherTongue}}</p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Languages Known :</p>
+            <p class="d-inline-block"> {{profile.languages}}</p>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Highest Qualification :</p>
+            <p class="d-inline-block"> {{profile.qualification}}</p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Course :</p>
+            <p class="d-inline-block"> {{profile.course}}</p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Stream :</p>
+            <p class="d-inline-block"> {{profile.stream}}</p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Percentage :</p>
+            <p class="d-inline-block"> {{profile.marksPercentage}}</p>%
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Year of Completion :</p>
+            <p class="d-inline-block"> {{profile.completionYear}}</p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Qualification Type :</p>
+            <p class="d-inline-block"> {{profile.qualificationType}}</p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Total Experience :</p>
+            <p class="d-inline-block"> {{profile.experienceYear}} Year {{profile.experienceMonth}} month</p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Current CTC :</p>
+            <p class="d-inline-block"> {{profile.currentCTC}}</p>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-6">
+            <p class="d-inline-block grey">Current Employer :</p>
+            <p class="d-inline-block"> {{profile.currentEmployer}}</p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Designation :</p>
+            <p class="d-inline-block"> {{profile.currentDesignation}}</p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Domain :</p>
+            <p class="d-inline-block"> {{profile.domain}}</p>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Sub-Domain :</p>
+            <p class="d-inline-block"> {{profile.subDomain}}</p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Current Location :</p>
+            <p class="d-inline-block"> {{profile.state}}</p>
+        </div>
+        <div class="col-md-6">
+            <p class="d-inline-block grey">Any Previous Application History in MRF :</p>
+            <p class="d-inline-block"> {{profile.previousApplied===1?'Yes':'No'}}</p>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Any relative Working on MRF :</p>
+            <p class="d-inline-block"> {{profile.relativeStatus===1?'Yes':'No'}}</p>
+        </div>
+        <div class="col-md-3" *ngIf="profile.relativeStatus===1">
+            <p class="d-inline-block grey">Relationship :</p>
+            <p class="d-inline-block"> {{profile.relativeName}}</p>
+        </div>
+        <div class="col-md-3" *ngIf="profile.relativeStatus===1">
+            <p class="d-inline-block grey">Relative Phone No. :</p>
+            <p class="d-inline-block"> {{profile.RelativeContactNo}}</p>
+        </div>
 
-                        <div class="form-row">
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Age :</p>
-                                <p class="d-inline-block">{{profile.age}} </p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Aadhar No. :</p>
-                                <p class="d-inline-block"> {{profile.aadharNo}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Mother Tongue :</p>
-                                <p class="d-inline-block"> {{profile.motherTongue}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Languages Known :</p>
-                                <p class="d-inline-block"> {{profile.language}}</p>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Highest Qualification :</p>
-                                <p class="d-inline-block"> {{profile.qualification}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Course :</p>
-                                <p class="d-inline-block"> {{profile.course}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Stream :</p>
-                                <p class="d-inline-block"> {{profile.stream}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Percentage :</p>
-                                <p class="d-inline-block"> {{profile.marksPercentage}}</p>%
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Year of Completion :</p>
-                                <p class="d-inline-block"> {{profile.completionYear}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Qualification Type :</p>
-                                <p class="d-inline-block"> {{candidate.qualificationType}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Total Experience :</p>
-                                <p class="d-inline-block"> {{candidate.experienceYear}} Year {{candidate.experienceMonth}} month</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Current CTC :</p>
-                                <p class="d-inline-block"> {{profile.currentCTC}}</p>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-6">
-                                <p class="d-inline-block grey">Current Employer :</p>
-                                <p class="d-inline-block"> {{profile.currentEmployer}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Designation :</p>
-                                <p class="d-inline-block"> {{profile.currentDesignation}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Domain :</p>
-                                <p class="d-inline-block"> {{profile.domain}}</p>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Sub-Domain :</p>
-                                <p class="d-inline-block"> {{profile.subDomain}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Current Location :</p>
-                                <p class="d-inline-block"> {{profile.state}}</p>
-                            </div>
-                            <div class="col-md-6">
-                                <p class="d-inline-block grey">Any Previous Application History in MRF :</p>
-                                <p class="d-inline-block"> {{profile.previousApplied===1?'Yes':'No'}}</p>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Any relative Working on MRF :</p>
-                                <p class="d-inline-block"> {{profile.relativeStatus===1?'Yes':'No'}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Relationship :</p>
-                                <p class="d-inline-block"> {{profile.relativeName}}</p>
-                            </div>
-                            <div class="col-md-3">
+        <!-- <div class="col-md-3">
                                 <p class="d-inline-block grey">Close Relation :</p>
                                 <p class="d-inline-block"> {{profile.AadharNo}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Source :</p>
-                                <p class="d-inline-block"> {{profile.relativeName}}</p>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Candidate Owner :</p>
-                                <p class="d-inline-block">Sample Name</p>
-                            </div>
+                            </div> -->
+        <div class="col-md-3">
+            <p class="d-inline-block grey">Source :</p>
+            <p class="d-inline-block"> {{profile.sourceChannelName}}</p>
+        </div>
+        <div class="col-md-3" *ngIf="profile.relativeStatus!==1">
+            <p class="d-inline-block grey">Candidate Owner :</p>
+            <p class="d-inline-block">{{profile.createdBy}}</p>
+        </div>
+    </div>
+    <!-- <div class="form-row">
+                            
                             <div class="col-md-3">
                                 <p class="d-inline-block grey">Employee ID :</p>
                                 <p class="d-inline-block">100234</p>
@@ -132,73 +137,73 @@
                                 <p class="d-inline-block grey">Function :</p>
                                 <p class="d-inline-block">Sample</p>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">Location :</p>
-                                <p class="d-inline-block"></p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">CMD Approval Required :</p>
-                                <p class="d-inline-block">{{profile.cmdApprovalRequired}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">CMD Approval Status :</p>
-                                <p class="d-inline-block">{{profile.cmdApprovalStatus}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p class="d-inline-block grey">CMD Approval No. :</p>
-                                <p class="d-inline-block">{{profile.cmdApprovalNo}}</p>
-                            </div>
-                        </div>
-                        <div class="form-row mt-3">
-                            <div class="col-md-6">
+                        </div> -->
+    <div class="form-row">
+        <div class="col-md-3" *ngIf="profile.relativeStatus===1">
+            <p class="d-inline-block grey">Candidate Owner :</p>
+            <p class="d-inline-block">{{profile.createdBy}}</p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">CMD Approval Required :</p>
+            <p class="d-inline-block">{{profile.cmdApprovalRequired}}</p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">CMD Approval Status :</p>
+            <p class="d-inline-block">{{profile.cmdApprovalStatus}}</p>
+        </div>
+        <div class="col-md-3">
+            <p class="d-inline-block grey">CMD Approval No. :</p>
+            <p class="d-inline-block">{{profile.cmdApprovalNo}}</p>
+        </div>
+    </div>
+    <div class="form-row mt-3">
+        <div class="col-md-6">
                                 <p>CMD Approval Attachment :</p>
                                 <div class="attach-file">
                                     <a href="#" title="Download"><i class="las color-black la-paperclip"></i>Approval doc </a>
                                     <a href="#"><i class="las la-download red"></i></a>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <p>Resume :</p>
-                                <div class="attach-file">
-                                    <a href="#" title="Download"><i class="las color-black la-paperclip"></i>Resume doc </a>
-                                    <a href="#"><i class="las la-download red"></i></a>
-                                </div>
-                            </div>
-                        </div>
+        <!-- <div class="col-md-6">
+            <p>Resume :</p>
+            <div class="attach-file">
+                <a href="#" title="Download"><i class="las color-black la-paperclip"></i>Resume doc </a>
+                <a href="#"><i class="las la-download red"></i></a>
+            </div>
+        </div> -->
+    </div>
 
-                        <div>
-                            <hr>
-                            <h6 class="red">Take Action</h6>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Gender<span class="required">*</span></label>
-                                        <div class="rdio rdio-primary d-inline-block">
-                                            <input name="radio" value="1" id="radio1" type="radio" checked="">
-                                            <label for="radio1">Send to Hiring Manager</label>
-                                        </div>
-                                        <div class="rdio rdio-primary d-inline-block">
-                                            <input name="radio" value="2" id="radio2" type="radio">
-                                            <label for="radio2">Shortlist</label>
-                                        </div>
-                                        <div class="rdio rdio-primary d-inline-block">
-                                            <input name="radio" value="3" id="radio3" type="radio">
-                                            <label for="radio3">Reject</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <label>Remarks</label>
-                                        <textarea class="form-control" id="" placeholder="Enter Remarks..."></textarea>
-                                    </div>
-                                </div>
-                            </div>                        </div>
-                        <div class="mt-4">
-                            <button type="button" class="btn btn-black">Submit</button>
-                            <button type="button" class="btn btn-primary">Cancel</button>
-                        </div>
+    <div>
+        <hr>
+        <h6 class="red">Take Action</h6>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Candidate Status<span class="required">*</span></label>
+                    <div class="rdio rdio-primary d-inline-block">
+                        <input name="radio1" value="1" id="rdbHiringManager" type="radio" checked="">
+                        <label for="radio1">Send to Hiring Manager</label>
                     </div>
-               
+                    <div class="rdio rdio-primary d-inline-block">
+                        <input name="radio2" value="2" id="rdbShortlist" type="radio">
+                        <label for="radio2">Shortlist</label>
+                    </div>
+                    <div class="rdio rdio-primary d-inline-block">
+                        <input name="radio3" value="3" id="rdbReject" type="radio">
+                        <label for="radio3">Reject</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label>Remarks</label>
+                    <textarea class="form-control" maxlength="250" id="Remarks" [(ngModel)]="Remarks" placeholder="Enter Remarks..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4">
+        <button type="submit" (click)="formSubmit()" class="btn btn-black">Submit</button>
+        <button type="button" class="btn btn-primary">Cancel</button>
+    </div>
+</div>

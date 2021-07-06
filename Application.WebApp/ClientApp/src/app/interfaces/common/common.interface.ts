@@ -36,10 +36,22 @@ export interface IAge{
     fromAge:number;
     toAge:number;
 }
+export interface IState{
+    stateId:number;
+    stateName:string;    
+}
 
 export interface IExperience{
     experienceId:number;
     experienceName:string;
     fromYear:number;
     toYear:number;
+}
+export interface IYears{
+    yearsId:number;
+    yearsName:string;
+}
+export interface IMonths{
+    monthId:number;
+    monthName:string;
 }

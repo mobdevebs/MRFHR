@@ -26,6 +26,8 @@ import { IIndustry, ISearchIndustry } from 'src/app/interfaces/common/industry.i
 import { IAge, IExperience } from 'src/app/interfaces/common/common.interface';
 import { CommonService } from '../../../services/common/common/common.service';
 import { ToastrService } from 'ngx-toastr';
+import { NotificationService } from '../../../sharedservices/notification.service';
+import { PersistanceService } from '../../../sharedservices/persitence.service';
 declare var jQuery: any;
 
 @Component({
@@ -146,8 +148,9 @@ export class JobdescriptionComponent implements OnInit {
   ages: IAge[] = [];
   experiences: IExperience[] = [];
   fileDocument: string;
-
+  createdBy:number;
   constructor(
+    private notificationService:NotificationService,
     private locationService: LocationService,
     private positionService: PositionService,
     private functionService: FunctionService,
@@ -160,8 +163,9 @@ export class JobdescriptionComponent implements OnInit {
     private industryService: IndustryService,
     private commonService: CommonService,
     private fb: FormBuilder,
-    private toasterService: ToastrService
-  ) {
+    private toasterService: ToastrService,
+     private persistance: PersistanceService)
+      { this.createdBy = this.persistance.get('loggedinuser').autoUserId;   
     this.createForm();
     this.getAllVerticals();
     this.getAllQualification();
@@ -205,7 +209,7 @@ export class JobdescriptionComponent implements OnInit {
       RestrictedJD: [''],
       JDDocument: [''],
       IsActive:[true],
-      CreatedBy:[0]
+      CreatedBy:[this.createdBy]
     });
   }
 
@@ -538,11 +542,13 @@ export class JobdescriptionComponent implements OnInit {
     this.jobDescriptionService.saveJobDescription(this.jobDescriptionForm.value).subscribe((result) => {
       if (result) {
         console.log(result);
+        this.notificationService.showSuccess(result.msg, "Job Description");
       }
       else {
       }
     }, error => {
       console.log(error);
+      this.notificationService.showError("Something went wrong.. Try again later..", "Job Description");
     }, () => {
       
     });

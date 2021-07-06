@@ -16,7 +16,10 @@ namespace Application.Service.Services.CommonModule
         {
             this.userRepository = userRepository;
         }
-
+        public async Task<List<User>> SaveUser(User search)
+        {
+            return await this.userRepository.SaveUser(search);
+        }
         public async Task<List<User>> GetAllUser(SearchAllUser search)
         {
             return await this.userRepository.GetAllUser(search);

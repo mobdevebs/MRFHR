@@ -22,7 +22,12 @@ export class VendorService {
     )
   }
   constructor(private httpClient: HttpClient) { }
-
+  getCurrentJob(formData: any): Observable<any> {
+    return this.httpClient.post<any>(this.apiURL + '/vendor/getcurrentjob', JSON.stringify(formData), this.httpOptions)
+        .pipe(
+          catchError(this.errorHandler)
+        )
+    }
   getAllVendor(formData: any): Observable<any> {
     return this.httpClient.post<any>(this.apiURL + '/vendor/getallvendor', formData, this.httpOptions)
       .pipe(

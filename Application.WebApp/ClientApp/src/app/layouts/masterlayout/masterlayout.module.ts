@@ -26,6 +26,12 @@ import { AllocatesourcechannelComponent } from '../../application-module/presele
 import { GetcandidateComponent } from '../../application-module/preselection/getcandidate/getcandidate.component';
 import { ViewcandidateComponent } from '../../application-module/preselection/viewcandidate/viewcandidate.component';
 import { ViewallcandidateComponent } from '../../application-module/preselection/viewallcandidate/viewallcandidate.component';
+import { CandidatecmdapprovalComponent } from '../../application-module/preselection/candidatecmdapproval/candidatecmdapproval.component';
+import { UsermasterComponent } from '../../application-module/master/usermaster/usermaster.component';
+import { CurrentjobComponent } from '../../application-module/vendor/currentjob/currentjob.component';
+import { VendorcandidateComponent } from '../../application-module/vendor/vendorcandidate/vendorcandidate.component';
+import { VendordashboardComponent } from '../../application-module/vendor/vendordashboard/vendordashboard.component';
+
 @NgModule({
     declarations: [
         MasterlayoutComponent,
@@ -45,7 +51,12 @@ import { ViewallcandidateComponent } from '../../application-module/preselection
         AllocatesourcechannelComponent,
         GetcandidateComponent,
         ViewcandidateComponent,
-        ViewallcandidateComponent
+        ViewallcandidateComponent,
+        CandidatecmdapprovalComponent,
+        UsermasterComponent,
+        CurrentjobComponent,
+        VendorcandidateComponent,
+        VendordashboardComponent
     ],
     imports: [
       CommonModule,

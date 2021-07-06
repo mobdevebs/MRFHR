@@ -10,5 +10,6 @@ namespace Application.Service.Services.Interfaces.CommonModule
     {
         Task<List<User>> GetAllUser(SearchAllUser search);
         Task<LoginUserStatus> GetLoginUser(LoginFormData formData);
+        Task<List<User>> SaveUser(User search);
     }
 }

@@ -1,0 +1,275 @@
+<form [formGroup]="saveForm" (ngSubmit)="onSubmit()">
+    <div class="content-box m-b-15 m-t-10">
+        <div class="page-title-area pb-2 mb-2">
+            <a href="#" class="back-btn"><i class="las la-arrow-circle-left"></i></a>
+            <h1 class="f-l">Submit Candidate</h1>
+        </div>
+        <h6 class="red">General information</h6>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Name<span class="required">*</span></label>
+                    <div class="form-row">
+                        <div class="col-3">
+                            <input type="text" class="form-control" disabled="true" formControlName="Prefix" name="Prefix"
+                            placeholder="Name as per Aadhar card">
+                        </div>
+                        <div class="col-9">
+                            <input type="text" class="form-control" disabled="true" formControlName="FullName" name="FullName"
+                                placeholder="Name as per Aadhar card">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Gender<span class="required">*</span></label>
+                    <input type="text" class="form-control pull-right datepicker"
+                    formControlName="Gender" disabled="true" name="Gender" placeholder="From Date">
+                </div>
+            </div>
+                        <div class="col-md-2">
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <div class="input-group datepiker date">
+                        <input type="text" class="form-control pull-right datepicker"
+                            formControlName="DOB" disabled="true" name="DOB" placeholder="From Date">
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="text" disabled="true" maxlength="2" text="1" class="form-control" formControlName="Age">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Email ID<span class="required">*</span></label>
+                    <input type="text" class="form-control" disabled="true" name="EmailId" formControlName="EmailId"
+                        placeholder="Enter email" />
+                   
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Phone No.<span class="required">*</span></label>
+                    <input disabled="true" maxlength="10" type="text" class="form-control"
+                        formControlName="ContactNo" placeholder="Eg:9800123456">
+                   
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Aadhar No.<span class="required">*</span></label>
+                    <input type="text" disabled="true" class="form-control" formControlName="AadharNo"
+                        maxlength="12" placeholder="Eg:1234/12345/12345">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Mother Tongue<span class="required">*</span></label>
+                    <input type="text" disabled="true" formControlName="MotherTongue" class="form-control"
+                    placeholder="Employer Name">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Languages Known<span class="required">*</span></label>
+                    <input type="text" disabled="true" formControlName="Languages" class="form-control"
+                    placeholder="Employer Name">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Highest Qualification<span class="required">*</span></label>
+                    <input type="text" disabled="true" formControlName="Qualification" class="form-control"
+                    placeholder="Employer Name">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Course<span class="required">*</span></label>
+                    <input type="text" disabled="true" formControlName="Course" class="form-control"
+                    placeholder="Employer Name">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Stream<span class="required">*</span></label>
+                    <input type="text" disabled="true" formControlName="Stream" class="form-control"
+                    placeholder="Employer Name">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Percentage<span class="required">*</span></label>
+                    <input type="text" class="form-control" disabled="true" formControlName="MarksPercentage"
+                        placeholder="CGPA to be conv. to %">
+                   
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Year of Completion<span class="required">*</span></label>
+                    <input type="text" disabled="true" formControlName="CompletionYears" class="form-control"
+                    placeholder="Employer Name">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Qualification Type<span class="required">*</span></label>
+                    <input type="text" disabled="true" formControlName="QualificationType" class="form-control"
+                    placeholder="Employer Name">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Total Experience <span class="required">*</span></label>
+                    <input type="text" disabled="true" formControlName="ExperienceYear" class="form-control"
+                    placeholder="Employer Name">
+                </div>
+            </div>
+            <div class="col-md-2" >
+                <div class="form-group">
+                    <label>Months<span class="required">*</span></label>
+                    <input type="text" disabled="true" formControlName="ExperienceMonth" class="form-control"
+                    placeholder="Employer Name">                                    
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Current CTC<span class="required">*</span></label>
+                    <input type="text" disabled="true" formControlName="CurrentCTC" class="form-control" placeholder="Enter CTC">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Current Employer<span class="required">*</span></label>
+                    <input type="text" disabled="true" formControlName="CurrentEmployer" class="form-control"
+                        placeholder="Employer Name">
+                   
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Designation<span class="required">*</span></label>
+                    <input type="text" disabled="true" formControlName="CurrentDesignation" class="form-control"
+                        placeholder="Enter Designation">
+                   
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Domain<span class="required">*</span></label>
+                    <input type="text" class="form-control" disabled="true" formControlName="Domain" placeholder="Enter Name">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Sub-Domain<span class="required">*</span></label>
+                    <input type="text" class="form-control" disabled="true" formControlName="SubDomain" placeholder="Enter Name">
+                                   </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Current Location<span class="required">*</span></label>
+                    <input type="text" class="form-control" disabled="true" formControlName="State" placeholder="Enter Name">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label>Any Previous Application History in MRF<span class="required">*</span></label>
+                <input type="text" class="form-control" disabled="true" formControlName="PreviousApplied" placeholder="Enter Name"> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="swichLabel">Any Relative Working in MRF<span class="required">*</span></label>
+                    <input type="text" class="form-control" disabled="true" formControlName="RelativeStatus" placeholder="Enter Name">
+                   
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Relative Name<span class="required">*</span></label>
+                    <input type="text" class="form-control" disabled="true" formControlName="RelativeName" placeholder="Enter Name">
+                   
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Relative's Mobile No.<span class="required">*</span></label>
+                    <input type="text" disabled="true" class="form-control" formControlName="RelativeContactNo"
+                        />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="swichLabel">CMD Approval Required</label>
+                    <select class="selectpicker form-control" formControlName="CMDApprovalRequired" title='Select'>
+                        <option [ngValue]="1">Yes</option>
+                        <option [ngValue]="0">No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>CMD Approval Status<span class="required">*</span></label>
+                    <select formControlName="CMDApprovalStatus" class="selectpicker form-control" title='Select'>
+                        <option [ngValue]="1">Approved</option>
+                        <option [ngValue]="0">Pending</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>CMD Approval No.<span class="required">*</span></label>
+                    <input type="text" formControlName="CMDApprovalNo" class="form-control" placeholder="Enter No.">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="">CMD Approval Attachment<span class="required">*</span></label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile" accept="application/pdf"
+                        (change)="handleUpload($event)">
+                    <label class="custom-file-label" for="customFile" #candidateResumeImport>Choose file</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="">Attached Resume</label>
+                <div class="attach-file">
+                    <a href="#" title="Download"><i class="las color-black la-paperclip"></i>Sample Document</a>
+                    <a href="#"><i class="las la-download red"></i></a>
+                </div>         
+                
+            </div>
+        </div>
+        <div class="my-3">
+            <span class="red">Aadhar Disclaimer:</span>
+            <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus expedita optio vero.</span>
+        </div>
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-black">Submit</button>
+       
+            <button type="button" class="btn btn-primary">Cancel</button>
+        </div>
+
+    </div>
+</form>

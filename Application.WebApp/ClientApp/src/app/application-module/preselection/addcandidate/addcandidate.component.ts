@@ -24,9 +24,13 @@ import { ISearchStream, IStream, IQualificationCourseStream, ISearchQualificatio
 import { StreamService } from '../../../services/common/stream/stream.service';
 import { ICourse, ISearchCourse, IQualificationCourse, ISearchQualificationCourse } from 'src/app/interfaces/common/course.interface';
 import { CourseService } from '../../../services/common/course/course.service';
-import { IQualification, ISearchQualification } from 'src/app/interfaces/common/qualification.interface';
+import { IQualification, IQualificationType, ISearchQualification } from 'src/app/interfaces/common/qualification.interface';
 import { QualificationService } from '../../../services/common/qualification/qualification.service';
-//import * as $ from 'jquery';
+import { IAge, IExperience, IMonths, IYears,IState } from 'src/app/interfaces/common/common.interface';
+import { NotificationService } from '../../../sharedservices/notification.service';
+import { ToastrService } from 'ngx-toastr';
+import { PersistanceService } from '../../../sharedservices/persitence.service';
+import { DecimalPipe } from '@angular/common';
 declare var jQuery: any;
 
 @Component({
@@ -36,7 +40,7 @@ declare var jQuery: any;
 })
 export class AddcandidateComponent implements OnInit {
   @ViewChild('tDate', { static: false }) tDate: ElementRef;
-  @ViewChild('managementFileImport', { static: false }) managementFileImport: ElementRef;
+  @ViewChild('candidateResumeImport', { static: false }) candidateResumeImport: ElementRef;
   saveForm = new FormGroup({
     Name: new FormControl('')
   });
@@ -70,6 +74,8 @@ export class AddcandidateComponent implements OnInit {
     qualificationId: null,
     isActive: null
   }
+   //qualification type
+   qualificationType: IQualificationType[] = [];
   //course
   courses: IQualificationCourse[] = [];
   selectedCourse: IQualificationCourse;
@@ -101,8 +107,7 @@ export class AddcandidateComponent implements OnInit {
   languageId: number;
   languageName: string;
   //location
-
-
+  fileDocument: string;
   //prefix
   prefix: IPrefix[] = [];
   selectedPrefix: IPrefix;
@@ -195,7 +200,15 @@ export class AddcandidateComponent implements OnInit {
   isAutoApproved: boolean = false;
   candidatefileToUpload: File = null;
   candidateDetailData: any;//ICandidateDetailData[]=[];
-  constructor(
+  //
+  ages: IAge[] = [];
+  experiences: IExperience[] = [];
+  CompletionYear: IYears[] = [];
+  Months: IMonths[] = [];
+  State: IState[] = [];
+  createdBy:number;
+  constructor(    
+    private notificationService: NotificationService,
     private locationService: LocationService,
     private positionService: PositionService,
     private functionService: FunctionService,
@@ -207,16 +220,21 @@ export class AddcandidateComponent implements OnInit {
     private languageService: LanguageService,
     private candidateService: CandidateService,
     private domainService: DomainService,
-    private fb: FormBuilder
-  ) {
+    private fb: FormBuilder,
+    private toasterService: ToastrService,
+    private persistance: PersistanceService) 
+    { this.createdBy = this.persistance.get('loggedinuser').autoUserId;
+    this.getAllExperience();
     this.getAllLocation();
+    this.getAllState();
     this.getAllFunction();
     this.getAllPosition();
     this.getAllPrefix();
     this.getAllLanguages();
     this.getAllQualification();
     this.getAllDomain();
-  }
+    this.getAllCompletionYearsAndMonths();
+      }
 
   ngAfterViewInit() {
     this.loadDatePicker();
@@ -229,11 +247,34 @@ export class AddcandidateComponent implements OnInit {
       todayHighlight: true
     });
   }
+  //only number will be add
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
+  }
+  getAllState() {
+    this.State = [];
+    this.commonService.getAllState().subscribe((result) => {
+      if (result) {
+        this.State = result;
+      }
+      else {
+        this.State = [];
+      }
+    }, error => {
+      console.log(error);
+    }, () => {
+      this.loadSelectPicker();
+    });
+  }
   ngOnInit() {
     this.saveForm = this.fb.group({
       PrefixId: ['', [Validators.required]],
       FullName: ['', [Validators.required]],
-      DOB: ['', [Validators.required]],
+      DOB: ['22/03/2021', [Validators.required]],
       Age: ['', [Validators.required]],
       GenderId: ['', [Validators.required]],
       EmailId: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
@@ -259,8 +300,15 @@ export class AddcandidateComponent implements OnInit {
       RelativeStatus: [''],
       RelativeName: ['', [Validators.required]],
       RelativeContactNo: ['', [Validators.required]],
-      Resume: ['', [Validators.required]],
-      SourceChannelId: [1]
+      Resume: [''],
+      SourceChannelId: [1],
+      ParentRelationshipId: [1],
+      ChildRelationshipId : [1],
+      RelationshipNotes : [''],
+      CMDApprovalRequired : [0],
+      CMDApprovalStatus : [false],
+      CMDApprovalNo : [''],
+      CMDApprovalDocument : ['']
     });
   }
   //prefix
@@ -277,6 +325,60 @@ export class AddcandidateComponent implements OnInit {
       console.log(error);
     }, () => {
       this.loadSelectPicker();
+    });
+  }
+  getAllCompletionYearsAndMonths()
+  {
+this.CompletionYear=[];
+this.commonService.getAllYears().subscribe((result) => {
+  if (result) {
+    this.CompletionYear = result;
+    console.log(result);
+  }
+  else {
+    this.CompletionYear = [];
+  }
+}, error => {
+  console.log(error);
+}, () => {
+  setTimeout(() => {
+    jQuery('.selectpicker').selectpicker('refresh');
+  });
+});
+this.Months=[];
+this.commonService.getAllMonths().subscribe((result) => {
+  if (result) {
+    this.Months = result;
+    console.log(result);
+  }
+  else {
+    this.Months = [];
+  }
+}, error => {
+  console.log(error);
+}, () => {
+  setTimeout(() => {
+    jQuery('.selectpicker').selectpicker('refresh');
+  });
+});
+  }
+  //experience
+  getAllExperience() {
+    this.experiences = [];
+    this.commonService.getAllExperience().subscribe((result) => {
+      if (result) {
+        this.experiences = result;
+        console.log(result);
+      }
+      else {
+        this.experiences = [];
+      }
+    }, error => {
+      console.log(error);
+    }, () => {
+      setTimeout(() => {
+        jQuery('.selectpicker').selectpicker('refresh');
+      });
     });
   }
   //languages
@@ -300,6 +402,32 @@ export class AddcandidateComponent implements OnInit {
       });
     });
   }
+  
+  handleUpload(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.fileDocument = reader.result.toString();
+      //   if (file.type == "application/pdf") { 
+      //   if ((file.size / 1024) > 5) {
+      //     this.flag=1;
+      //     this.toasterService.error('Maximum file size allowed is 5MB!', 'Error!', {
+      //       timeOut: 3000,
+      //     });
+      //   }
+      //   else{
+      //     this.flag=0;
+      //   }
+      // }
+      // else{
+      //   this.flag=1;
+      //   this.toasterService.error('Only PDF files are allowed!', 'Error!', {
+      //     timeOut: 3000,
+      //   });
+      // }
+    };
+  }
   //qualification
   getAllQualification() {
     this.qualifications = [];
@@ -310,6 +438,23 @@ export class AddcandidateComponent implements OnInit {
       }
       else {
         this.qualifications = [];
+      }
+    }, error => {
+      console.log(error);
+    }, () => {
+      setTimeout(() => {
+        jQuery('.selectpicker').selectpicker('refresh');
+      });
+    });
+
+    this.qualificationType = [];
+    this.qualificationService.getAllQualificationType(this.searchQualification).subscribe((result) => {
+      if (result) {
+        this.qualificationType = result;
+        console.log(result);
+      }
+      else {
+        this.qualificationType = [];
       }
     }, error => {
       console.log(error);
@@ -581,43 +726,59 @@ export class AddcandidateComponent implements OnInit {
     });
   }
 
-  onFileChange(files: FileList) {
-    this.managementFileImport.nativeElement.innerText = Array.from(files)
-      .map(f => f.name)
-      .join(', ');
-    this.candidatefileToUpload = files.item(0);
-    console.log(this.candidatefileToUpload);
-  }
+
   onReset() {
     this.submitted = false;
     this.saveForm.reset();
+    this.getAllExperience();
+    this.getAllLocation();
+    this.getAllState();
+    this.getAllFunction();
+    this.getAllPosition();
+    this.getAllPrefix();
+    this.getAllLanguages();
+    this.getAllQualification();
+    this.getAllDomain();
+    this.getAllCompletionYearsAndMonths();
   }
   isFieldValid(field: string) {
     return (!this.saveForm.get(field).valid && this.saveForm.get(field).touched) ||
       (this.saveForm.get(field).untouched && this.onSubmit);
   }
+  
   onSubmit() {
-    var a = this.saveForm.get('LanguageIds').value;
     console.log(this.saveForm);
 
     this.submitted = true;
     // stop here if form is invalid
-    if (this.saveForm.invalid) {
-      alert('Please provide valid inputs..');
+        if (this.saveForm.invalid) {
+      this.notificationService.showError("Please provide valid inputs!!", "")
       return;
     }
     else {
+      this.saveForm.patchValue({
+        Resume: "",//this.fileDocument,
+        GenderId: Number(this.saveForm.get("GenderId").value),
+        Age: Number(this.saveForm.get("Age").value),
+        LanguageIds: String(this.saveForm.get("LanguageIds").value),
+        MarksPercentage: parseFloat(this.saveForm.get("MarksPercentage").value),
+        CurrentCTC: parseFloat(this.saveForm.get("CurrentCTC").value),
+        PreviousApplied:Boolean(JSON.parse(this.saveForm.get("PreviousApplied").value)),
+        RelativeStatus:Boolean(JSON.parse(this.saveForm.get("RelativeStatus").value))
+      })
+      
       this.candidateService.saveCandidateDetails(this.saveForm.value).subscribe((result) => {
         // display form values on success
-        alert('Candidate saved successfully..');
+        this.notificationService.showSuccess(result.msg, "Add Candidate");
         console.log(result);
+        this.onReset();
+
       }, error => {
         // display form values on success
-        alert('Something went wrong.. Try again later..');
+          this.notificationService.showError("Something went wrong.. Try again later..", "")        
         console.log(error);
       });
       console.log();
     }
   }
-
 }

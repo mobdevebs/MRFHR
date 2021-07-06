@@ -24,6 +24,14 @@ export class QualificationService {
       )
   }
 
+  
+  getAllQualificationType(formData: any): Observable<any> {
+    return this.httpClient.post<any>(this.apiURL + '/qualification/getallqualificationType', JSON.stringify(formData), this.httpOptions)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+  }
+
   errorHandler(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

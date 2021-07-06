@@ -22,6 +22,18 @@ namespace Application.Service.Services.CommonModule
             return await this.commonRepository.GetAllAge();
         }
 
+        public async Task<List<Years>> GetAllYears()
+        {
+            return await this.commonRepository.GetAllYears();
+        }
+        public async Task<List<Months>> GetAllMonths()
+        {
+            return await this.commonRepository.GetAllMonths();
+        }
+        public async Task<List<State>> GetAllState()
+        {
+            return await this.commonRepository.GetAllState();
+        }
         public async Task<List<Experience>> GetAllExperience()
         {
             return await this.commonRepository.GetAllExperience();

@@ -37,5 +37,27 @@ namespace Application.DataAccess.Repositories.CommonModule
                 throw ex;
             }
         }
+
+        public async Task<List<QualificationType>> GetAllQualificationType(SearchQualification search)
+        {
+            try
+            {
+                List<QualificationType> returnList = new List<QualificationType>();
+                using (IDbConnection connection = base.GetConnection())
+                {
+                    var para = new DynamicParameters();
+                    para.Add("@QualificationId", search.QualificationId);
+                    para.Add("@IsActive", search.IsActive);
+                    const string procName = "Usp_QualificationType_GetAll";
+                    connection.Open();
+                    returnList = connection.Query<QualificationType>(procName, para, commandType: CommandType.StoredProcedure).ToList();
+                    return await Task.FromResult(returnList);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

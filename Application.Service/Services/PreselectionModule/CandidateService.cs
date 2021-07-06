@@ -1,5 +1,6 @@
 ﻿using Application.DataAccess.DataContext;
 using Application.DataAccess.Repositories.Interfaces.PreselectionModule;
+using Application.Entity.Entities.CommonModule;
 using Application.Entity.Entities.PreselectionModule;
 using Application.Service.Services.Interfaces.PreselectionModule;
 using Dapper;
@@ -25,8 +26,15 @@ namespace Application.Service.Services.PreselectionModule
         {
             return await this.candidateRepository.GetCandidate(search);
         }
-
-        public async Task<List<Candidate>> SaveCandidate(Candidate formdata)
+        public async Task<ReturnMessage> SaveCandidateStatus(CandidateStatus formdata)
+        {
+            return await this.candidateRepository.SaveCandidateStatus(formdata);
+        }
+        public async Task<ReturnMessage> SaveCandidateCMDStatus(CandidateCmdStatus formdata)
+        {
+            return await this.candidateRepository.SaveCandidateCMDStatus(formdata);
+        }
+        public async Task<ReturnMessage> SaveCandidate(Candidate formdata)
         {
             return await this.candidateRepository.SaveCandidate(formdata);
         }

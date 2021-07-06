@@ -18,6 +18,13 @@ export class CandidateService {
 
 constructor(private httpClient: HttpClient) { }
 
+saveCandidateCMDStatus(formData: any): Observable<any> {
+  return this.httpClient.post<any>(this.apiURL + '/candidate/savecandidatecmdstatus', JSON.stringify(formData), this.httpOptions)
+  .pipe(
+    catchError(this.errorHandler)
+  )
+}
+
 getCandidateDetails(formData: any): Observable<any> {
     return this.httpClient.post<any>(this.apiURL + '/candidate/getcandidateprofile', JSON.stringify(formData), this.httpOptions)
       .pipe(
@@ -26,12 +33,17 @@ getCandidateDetails(formData: any): Observable<any> {
   }
 
 saveCandidateDetails(formData: any): Observable<any> {
-    return this.httpClient.post<any>(this.apiURL + '/candidate/savecandidateprofile', JSON.stringify(formData), this.httpOptions)
+      return this.httpClient.post<any>(this.apiURL + '/candidate/savecandidateprofile', JSON.stringify(formData), this.httpOptions)
       .pipe(
         catchError(this.errorHandler)
       )
   }
-
+  saveCandidateStatus(formData: any): Observable<any> {
+    return this.httpClient.post<any>(this.apiURL + '/candidate/savecandidatestatus', JSON.stringify(formData), this.httpOptions)
+    .pipe(
+      catchError(this.errorHandler)
+    )
+}
 errorHandler(error) {
   let errorMessage = '';
   if (error.error instanceof ErrorEvent) {

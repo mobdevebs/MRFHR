@@ -9,6 +9,11 @@ export interface ILoginUser{
   userId:string;
   password:string;
 }
+export interface IUserMaster
+{    
+    Password :string;
+    EmailId :string;
+}
 
 export interface IUserDetail{
   autoUserId:number;

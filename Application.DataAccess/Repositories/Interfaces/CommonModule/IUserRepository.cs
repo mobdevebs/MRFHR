@@ -9,6 +9,7 @@ namespace Application.DataAccess.Repositories.Interfaces.CommonModule
     public interface IUserRepository
     {
         Task<List<User>> GetAllUser(SearchAllUser search);
+        Task<List<User>> SaveUser(User search);
         Task<LoginUserStatus> GetLoginUser(LoginFormData formdata);
     }
 }

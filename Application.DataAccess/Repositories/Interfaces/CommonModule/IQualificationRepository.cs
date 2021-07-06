@@ -9,5 +9,6 @@ namespace Application.DataAccess.Repositories.Interfaces.CommonModule
    public interface IQualificationRepository
     {
         Task<List<Qualification>> GetAllQualifaction(SearchQualification search);
+        Task<List<QualificationType>> GetAllQualificationType(SearchQualification search);
     }
 }

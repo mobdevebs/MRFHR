@@ -11,15 +11,17 @@ namespace Application.Service.Services.CommonModule
   public  class QualificationService : IQualificationService
     {
         private IQualificationRepository qualificationRepository;
-
         public QualificationService(IQualificationRepository iQualificationRepository)
         {
             this.qualificationRepository = iQualificationRepository;
         }
-
         public async Task<List<Qualification>> GetAllQualification(SearchQualification search)
         {
             return await this.qualificationRepository.GetAllQualifaction(search);
+        }
+        public async Task<List<QualificationType>> GetAllQualificationType(SearchQualification search)
+        {
+            return await this.qualificationRepository.GetAllQualificationType(search);
         }
     }
 }

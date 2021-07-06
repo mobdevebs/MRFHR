@@ -217,7 +217,7 @@ export class RorequisitionlistComponent implements OnInit {
 
   gotoAllocateToRM(id){
     this.shareddataService.setData(id);
-    this._route.navigate(['/allocatetorm']);
+    this._route.navigate(['/rorequisitionlist/allocatetorm']);
   }
 
   

@@ -14,7 +14,9 @@ import { PositionService } from '../../../services/common/position/position.serv
 import { JobtypeService } from '../../../services/common/jobtype/jobtype.service';
 import { JobdescriptionService } from '../../../services/common/jobdescription/jobdescription.service';
 import { RequisitionService } from '../../../services/preselection/requisition/requisition.service';
+import { NotificationService } from '../../../sharedservices/notification.service';
 import { PersistanceService } from '../../../sharedservices/persitence.service';
+import { ToastrService } from 'ngx-toastr';
 //import * as $ from 'jquery';
 declare var jQuery: any;
 
@@ -114,6 +116,7 @@ export class RequisitionplantComponent implements OnInit {
   managementfileToUpload: File = null;
   createdBy:number;
   constructor(
+    private notificationService: NotificationService,
     private locationService: LocationService,
     private positionService: PositionService,
     private functionService: FunctionService,
@@ -472,6 +475,7 @@ export class RequisitionplantComponent implements OnInit {
     formData.append("CreatedBy", this.createdBy.toString());
     console.log(formData);
     this.requisitionService.generateRequisition(formData).subscribe((result) => {
+      this.notificationService.showSuccess ("Requisition generated successfully", "")
       console.log(result);
     }, error => {
       console.log(error);

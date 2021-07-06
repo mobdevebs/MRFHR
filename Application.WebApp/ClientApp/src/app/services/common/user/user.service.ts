@@ -16,7 +16,12 @@ export class UserService {
     })
   }
   constructor(private httpClient: HttpClient) { }
-
+  saveUserMaster(formData: any): Observable<any> {
+    return this.httpClient.post<any>(this.apiURL + '/user/save', JSON.stringify(formData), this.httpOptions)
+        .pipe(
+          catchError(this.errorHandler)
+        )
+    }
   getAllUser(formData: any): Observable<any> {
     return this.httpClient.post<any>(this.apiURL + '/user/getalluser', JSON.stringify(formData), this.httpOptions)
       .pipe(

@@ -143,23 +143,22 @@ export class AllocatetormComponent implements OnInit {
 
   formSubmit(){
     console.log(this.saveForm.value);
-    this.toasterService.success('Hello world!', 'Toastr fun!', {
-      timeOut: 3000,
-    });
-    //this.notificationService.showSuccess("Data shown successfully !!", "HDTuto.com")
-    // this.requisitionService.allocateRequisitionToRM(this.saveForm.value).subscribe((result) => {
-    //   if (result) {
-    //     console.log(result);
-    //   }
-    //   else {
-    //     this.rmUser = [];
-    //   }
-    // }, error => {
-    //   console.log(error);
-    // }, () => {
-    //   this.loadSelectPicker();
+    // this.toasterService.success('Hello world!', 'Toastr fun!', {
+    //   timeOut: 3000,
     // });
-    
+   
+    this.requisitionService.allocateRequisitionToRM(this.saveForm.value).subscribe((result) => {
+      if (result) {
+        console.log(result);
+        this.notificationService.showSuccess("Allocated successfully !!", "Success");
+      }
+      else {
+        this.rmUser = [];
+      }
+    }, error => {
+      console.log(error);
+    }, () => {
+      this.loadSelectPicker();
+    });    
   }
-
 }

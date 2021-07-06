@@ -1,0 +1,79 @@
+<form [formGroup]="saveForm" (ngSubmit)="OnFilter()">
+    <div class="content-box m-b-15 m-t-10">
+    <div class="page-title-area pb-2 mb-2">
+        <h1 class="f-l">All Positions</h1>
+    </div>
+    <div class="filter-sec">
+        <div class="form-row m-t-10">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Position</label>
+                    <select class="selectpicker" formControlName="PositionId" title="All" [(ngModel)]="PositionId">
+                       <option *ngFor="let position of positions" [ngValue]="position.positionId">
+                            {{position.positionName}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Function</label>
+                    <select class="selectpicker" formControlName="FunctionId" title="All" [(ngModel)]="FunctionId"
+                        (change)="onFunctionChange()">
+                        <option *ngFor="let function of functions" [ngValue]="function.functionId">
+                            {{function.functionName}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Location</label>
+                    <select formControlName="LocationId" class="selectpicker" title="All">
+                        <option *ngFor="let loc of locations" [ngValue]="loc.locationId">
+                            {{loc.locationOffice}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4 text-right">
+                <button type="submit" class="btn btn-primary btn-sm"><i class="las la-filter"></i>
+                    Filter</button>
+                <button type="button" class="btn btn-secondary btn-sm"><i class="las la-sync-alt"></i> Reset</button>
+            </div>
+
+        </div>
+    </div>
+    <div *ngFor="let c of currentJobs">
+        <hr>
+        <div class="job-list-row">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                    <h6 class="red mt-0 mb-1">{{c.jobPurpose}} </h6>
+                    <div class="info-header">
+                        <span class="mr-2"><i class="las la-map-marker"></i> {{c.stateName}}</span>
+                        <span class="mr-2"><i class="las la-hourglass-start"></i> {{c.jobType}}</span>
+                        <span class="mr-2"><i class="las la-rupee-sign"></i> {{c.range}}</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="capsule outline-black"><i class="las la-calendar-check"></i> {{c.createdOn}}</span>
+                    <!-- <button type="button" class="btn btn-rounded btn-outline-primary btn-sm" *ngIf="{{c.IsSubmitted===0?'false':'true'}}" >Submitted Candidate</button> -->
+                    <a routerLink="/addcandidate" class="btn btn-primary btn-rounded btn-sm">Submit Candidate</a>
+                </div>
+            </div>
+            <div class="mb-3">
+                <p class="grey">Description:</p>
+                <p>{{c.jobSummary}}</p>
+            </div>
+            <!-- <div>
+            <div class="attach-file">
+                <a href="#" title="Download"><i class="las color-black la-paperclip"></i> Job Details</a>
+                <a href="#"><i class="las la-download red"></i></a>
+            </div>
+        </div> -->
+        </div>
+    </div>
+</div>
+</form>

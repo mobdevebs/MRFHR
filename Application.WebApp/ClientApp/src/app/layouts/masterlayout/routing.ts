@@ -9,6 +9,7 @@ import { MasterlayoutComponent } from './masterlayout.component';
 import { JobdescriptionComponent } from '../../application-module/master/jobdescription/jobdescription.component';
 import { RequisitionplantComponent } from '../../application-module/preselection/requisitionplant/requisitionplant.component';
 import { RorequisitionlistComponent } from '../../application-module/preselection/rorequisitionlist/rorequisitionlist.component';
+import { CandidatecmdapprovalComponent } from '../../application-module/preselection/candidatecmdapproval/candidatecmdapproval.component';
 import { ApproverrequisitionlistComponent } from '../../application-module/preselection/approverrequisitionlist/approverrequisitionlist.component';
 import { RmrequisitionlistComponent } from '../../application-module/preselection/rmrequisitionlist/rmrequisitionlist.component';
 import { AllocatetormComponent } from '../../application-module/preselection/allocatetorm/allocatetorm.component';
@@ -17,6 +18,10 @@ import { GetcandidateComponent } from '../../application-module/preselection/get
 import { ViewcandidateComponent } from '../../application-module/preselection/viewcandidate/viewcandidate.component';
 import { ViewallcandidateComponent } from '../../application-module/preselection/viewallcandidate/viewallcandidate.component';
 import { AllocatesourcechannelComponent } from '../../application-module/preselection/allocatesourcechannel/allocatesourcechannel.component';
+import { UsermasterComponent } from '../../application-module/master/usermaster/usermaster.component';
+import { CurrentjobComponent } from '../../application-module/vendor/currentjob/currentjob.component';
+import { VendorcandidateComponent } from '../../application-module/vendor/vendorcandidate/vendorcandidate.component';
+import { VendordashboardComponent } from '../../application-module/vendor/vendordashboard/vendordashboard.component';
 
 const routes: Routes = [
     {
@@ -25,11 +30,11 @@ const routes: Routes = [
       canActivate: [AuthenticationGuard],       
       children: [
         {
-          path: '',
+          path: 'home',
           component: DashboardComponent  
         },
         {
-          path:'master/jobdescription',
+          path:'jobdescription',
           component:JobdescriptionComponent
         },
         {
@@ -56,6 +61,7 @@ const routes: Routes = [
           path:'allocatesourcechannel',
           component:AllocatesourcechannelComponent
         },
+        { path: 'getcandidate/:id', component: GetcandidateComponent },
         {
           path:'addcandidate',
           component:AddcandidateComponent
@@ -71,6 +77,26 @@ const routes: Routes = [
         {
           path:'viewallcandidate',
           component:ViewallcandidateComponent
+        },
+        {
+          path:'cmdapproval',
+          component:CandidatecmdapprovalComponent
+        },       
+        {
+          path:'currentjob',
+          component:CurrentjobComponent
+        },
+        {
+          path:'signup',
+          component:UsermasterComponent
+        },       
+        {
+          path:'vendordashboard',
+          component:VendordashboardComponent
+        },
+        {
+          path:'vendorcandidate',
+          component:VendorcandidateComponent
         }
       ]
     },

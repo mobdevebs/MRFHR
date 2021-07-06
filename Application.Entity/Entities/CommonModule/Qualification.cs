@@ -10,7 +10,12 @@ namespace Application.Entity.Entities.CommonModule
         public string QualificationName { get; set; }
         public bool IsActive { get; set; }
     }
-
+    public class QualificationType
+    {
+        public int QualificationTypeId { get; set; }
+        public string QualificationTypeName { get; set; }
+        public bool IsActive { get; set; }
+    }
     public class SearchQualification
     {
         public int? QualificationId { get; set; }

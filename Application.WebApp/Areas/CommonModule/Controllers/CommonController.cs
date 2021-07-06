@@ -40,6 +40,22 @@ namespace Application.WebApp.Areas.CommonModule.Controllers
         }
 
         [HttpGet]
+        [Route("getallyears")]
+        public async Task<IActionResult> GetAllYears()
+        {
+            try
+            {
+                var response = await this.commonService.GetAllYears().ConfigureAwait(false);
+
+                return this.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
         [Route("getallage")]
         public async Task<IActionResult> GetAllAge()
         {
@@ -55,6 +71,36 @@ namespace Application.WebApp.Areas.CommonModule.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("getallmonths")]
+        public async Task<IActionResult> GetAllMonths()
+        {
+            try
+            {
+                var response = await this.commonService.GetAllMonths().ConfigureAwait(false);
+
+                return this.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+        [HttpGet]
+        [Route("getallstate")]
+        public async Task<IActionResult> GetAllState()
+        {
+            try
+            {
+                var response = await this.commonService.GetAllState().ConfigureAwait(false);
+
+                return this.Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
         [HttpGet]
         [Route("getallexperience")]
         public async Task<IActionResult> GetAllExperience()

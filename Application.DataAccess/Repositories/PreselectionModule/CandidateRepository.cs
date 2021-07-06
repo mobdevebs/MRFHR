@@ -1,5 +1,6 @@
 ﻿using Application.DataAccess.DataContext;
 using Application.DataAccess.Repositories.Interfaces.PreselectionModule;
+using Application.Entity.Entities.CommonModule;
 using Application.Entity.Entities.PreselectionModule;
 using Dapper;
 using System;
@@ -38,29 +39,79 @@ namespace Application.DataAccess.Repositories.PreselectionModule
                 throw ex;
             }
         }
-
-        public async Task<List<Candidate>> SaveCandidate(Candidate formdata)
+        public async Task<ReturnMessage> SaveCandidateStatus(CandidateStatus formdata)
         {
             try
             {
-                List<Candidate> returnList = new List<Candidate>();
+                ReturnMessage rm = new ReturnMessage();
                 using (IDbConnection connection = base.GetConnection())
                 {
                     var para = new DynamicParameters();
-                    para.Add("@CandidateId", formdata.RelativeContactNo);
-                    para.Add("@PrefixId ", formdata.RelativeContactNo);
-                    para.Add("@FullName ", formdata.RelativeContactNo);
+                    para.Add("@CandidateId", formdata.CandidateId);
+                    para.Add("@RequisitionId", formdata.RequisitionId);
+                    para.Add("@Remarks", formdata.Remarks);
+                    para.Add("@CreatedBy", formdata.CreatedBy);
+                    para.Add("@StatusId", formdata.StatusId);
+                    const string procName = "Usp_CandidateStatus_InsertUpdate";
+                    connection.Open();
+                    rm = connection.Query<ReturnMessage>(procName, para, commandType: CommandType.StoredProcedure).FirstOrDefault(); ;
+                    return await Task.FromResult(rm);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<ReturnMessage> SaveCandidateCMDStatus(CandidateCmdStatus formdata)
+        {
+            try
+            {
+                ReturnMessage rm = new ReturnMessage();
+                using (IDbConnection connection = base.GetConnection())
+                {
+                    var para = new DynamicParameters();
+                    para.Add("@CandidateId", formdata.CandidateId);
+                    para.Add("@CMDApprovalDocument", formdata.CMDApprovalDocument);
+                    para.Add("@CMDApprovalNo", formdata.CMDApprovalNo);
+                    para.Add("@CreatedBy", formdata.CreatedBy);
+                    para.Add("@CMDApprovalRequired", formdata.CMDApprovalRequired);
+                    para.Add("@CMDApprovalStatus", formdata.CMDApprovalStatus);
+                    const string procName = "Usp_CandidateCMDStatus_InsertUpdate";
+                    connection.Open();
+                    rm = connection.Query<ReturnMessage>(procName, para, commandType: CommandType.StoredProcedure).FirstOrDefault(); ;
+                    return await Task.FromResult(rm);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<ReturnMessage> SaveCandidate(Candidate formdata)
+        {
+            try
+            {
+                ReturnMessage rm = new ReturnMessage();
+                using (IDbConnection connection = base.GetConnection())
+                {
+                    var para = new DynamicParameters();
+                    para.Add("@CandidateId", formdata.CandidateId);
+                    para.Add("@PrefixId", formdata.PrefixId);
+                    para.Add("@FullName", formdata.FullName);
                     para.Add("@GenderId", formdata.GenderId);
                     para.Add("@DOB", formdata.DOB);
+                    para.Add("@Age", formdata.Age);
                     para.Add("@EmailId", formdata.EmailId);
                     para.Add("@ContactNo", formdata.ContactNo);
                     para.Add("@AadharNo", formdata.AadharNo);
                     para.Add("@MotherTongueId", formdata.MotherTongueId);
-                    para.Add("@LaguageIds", formdata.LaguageIds);
+                    para.Add("@LaguageIds", formdata.LanguageIds);
                     para.Add("@QualificationId", formdata.QualificationId);
                     para.Add("@CourseId", formdata.CourseId);
                     para.Add("@StreamId", formdata.StreamId);
-                    para.Add("@MarksPercentage", formdata.RelativeContactNo);
+                    para.Add("@MarksPercentage", formdata.MarksPercentage);
                     para.Add("@CompletionYear", formdata.CompletionYear);
                     para.Add("@QualificationTypeId", formdata.QualificationTypeId);
                     para.Add("@ExperienceYear", formdata.ExperienceYear);
@@ -73,7 +124,7 @@ namespace Application.DataAccess.Repositories.PreselectionModule
                     para.Add("@StateId", formdata.StateId);
                     para.Add("@PreviousApplied", formdata.PreviousApplied);
                     para.Add("@RelativeStatus", formdata.RelativeStatus);
-                    para.Add("@RelativeName", formdata.RelativeContactNo);
+                    para.Add("@RelativeName", formdata.RelativeName);
                     para.Add("@RelativeContactNo", formdata.RelativeContactNo);
                     para.Add("@ParentRelationshipId", formdata.ParentRelationshipId);
                     para.Add("@ChildRelationshipId", formdata.ChildRelationshipId);
@@ -86,11 +137,11 @@ namespace Application.DataAccess.Repositories.PreselectionModule
                     para.Add("@IsEmployee", formdata.IsEmployee);
                     para.Add("@CreatedBy", formdata.CreatedBy);
                     para.Add("@Status", formdata.Status);
-                    para.Add("@CandidateId", formdata.CandidateId);
+                    para.Add("@SourceChannelId", formdata.SourceChannelId);
                     const string procName = "Usp_Candidate_InsertUpdate";
                     connection.Open();
-                    returnList = connection.Query<Candidate>(procName, para, commandType: CommandType.StoredProcedure).ToList();
-                    return await Task.FromResult(returnList);
+                    rm = connection.Query<ReturnMessage>(procName, para, commandType: CommandType.StoredProcedure).FirstOrDefault(); ;
+                    return await Task.FromResult(rm);
                 }
             }
             catch (Exception ex)
